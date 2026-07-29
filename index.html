@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BAUDHOUSE — Signal from noise</title>
+<meta name="description" content="A one-person software house tuned to the carrier. Game replays, save files, packets, audio, open intelligence — signal from noise.">
+<link rel="canonical" href="https://baudhouse.com/">
+<meta property="og:title" content="BAUDHOUSE — Signal from noise">
+<meta property="og:description" content="A one-person software house tuned to the carrier.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='none' stroke='%23FFB000' stroke-width='7'/%3E%3C/svg%3E">
+<script>/* set theme before first paint to avoid flash */
+try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<a class="skip" href="#roster-h">SKIP TO ROSTER</a>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text" class="lock-pending">DIALING…</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;EST. 2026</span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Baudhouse">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">00&nbsp;&nbsp;·&nbsp;&nbsp;BAUD × BAUHAUS</p>
+      <p id="fig" class="fig est" aria-hidden="true">FIG. 00 — 8 GLYPHS + 1 CARRIER Ø</p>
+    </div>
+    <h1 id="wordmark-h" aria-label="BAUDHOUSE" title="RE-ACQUIRE CARRIER">
+      <span id="wordmark" aria-hidden="true"><span data-bh-l="B">B</span><span data-bh-l="A">A</span><span data-bh-l="U">U</span><span data-bh-l="D">D</span><span data-bh-l="H">H</span><svg viewBox="0 0 100 100" class="omark" aria-hidden="true"><circle id="ocircle" cx="50" cy="50" r="41" fill="none" stroke="var(--amber)" stroke-width="13"></circle></svg><span data-bh-l="U">U</span><span data-bh-l="S">S</span><span data-bh-l="E">E</span></span>
+    </h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Signal from noise.</p>
+        <p class="thesis-body">Baudhouse is a one-person software house that pulls clean signal out of raw carriers — game replays, save files, network packets, audio, open-source intelligence.</p>
+      </div>
+      <nav class="hero-nav" aria-label="Primary">
+        <a href="https://github.com/baudhouse">GITHUB ↗</a>
+        <a href="mailto:signal@baudhouse.com">CONTACT ↗</a>
+      </nav>
+    </div>
+  </div>
+</section>
+
+<!-- ROSTER -->
+<section class="band" aria-labelledby="roster-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="roster-h" tabindex="-1">THE ROSTER</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">9 CARRIERS</span>
+    </div>
+
+    <div class="grid">
+
+      <article class="card card-six">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="21" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <g class="g-anim g-origin"><line x1="28" y1="1.5" x2="28" y2="13" stroke="var(--amber)" stroke-width="2"></line><line x1="28" y1="43" x2="28" y2="54.5" stroke="var(--amber)" stroke-width="2"></line><line x1="1.5" y1="28" x2="13" y2="28" stroke="var(--amber)" stroke-width="2"></line><line x1="43" y1="28" x2="54.5" y2="28" stroke="var(--amber)" stroke-width="2"></line></g>
+            <circle cx="28" cy="28" r="3.5" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>SIXSIGHT</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Rainbow Six Siege analytics. Replay telemetry in, verdicts out.</p>
+        <div class="card-foot">
+          <span class="tag">SAAS</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-diff">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M20 6 L38 42 L2 42 Z" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path class="g-anim" d="M36 20 L54 54 L18 54 Z" fill="var(--amber)"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>DIFFHUD</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Telemetry HUD for grand strategy — Civ VI, Stellaris, CK3, EU4.</p>
+        <div class="card-foot">
+          <span class="tag">SAAS</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="7" y="7" width="42" height="42" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle cx="28" cy="28" r="12" fill="none" stroke="var(--amber)" stroke-width="2"></circle>
+            <line class="g-anim g-origin" x1="14" y1="42" x2="42" y2="14" stroke="var(--amber)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3><a class="card-link" href="https://bikebrainz.github.io/Nullock/" title="Nullock — site & install">NULLOCK<span class="lnk" aria-hidden="true"> ↗</span></a></h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Web security toolkit — intercepting proxy and scanner. Qt6, FOSS.</p>
+        <div class="card-foot">
+          <span class="tag">OPEN SOURCE</span>
+          <span class="status" title="Status: syncing — active development" aria-label="Status: syncing"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3 off"></span></span>SYNC</span>
+        </div>
+      </article>
+
+      <article class="card card-slip">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M20 10 L48 28 L20 46 Z" fill="var(--ink)"></path>
+            <g class="g-anim"><line x1="6" y1="18" x2="16" y2="18" stroke="var(--amber)" stroke-width="2"></line><line x1="2" y1="28" x2="14" y2="28" stroke="var(--amber)" stroke-width="2"></line><line x1="6" y1="38" x2="16" y2="38" stroke="var(--amber)" stroke-width="2"></line></g>
+          </svg>
+          <span class="card-no" aria-hidden="true">04</span>
+        </div>
+        <h3>SLIPSTREAM</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>A torrent client that manages its own engine. Tauri + Rust.</p>
+        <div class="card-foot">
+          <span class="tag">DESKTOP</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-wraith">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="8" y="8" width="34" height="34" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle class="g-anim" cx="34" cy="34" r="14" fill="none" stroke="var(--amber)" stroke-width="2" stroke-dasharray="4 5"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">05</span>
+        </div>
+        <h3>WRAITH</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>OSINT framework with a terminal soul. TUI first, dashboard second.</p>
+        <div class="card-foot">
+          <span class="tag">OPEN SOURCE</span>
+          <span class="status" title="Status: syncing — active development" aria-label="Status: syncing"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3 off"></span></span>SYNC</span>
+        </div>
+      </article>
+
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path class="g-anim" d="M4 38 H12 V18 H24 V38 H32 V18 H40 V38 H52" fill="none" stroke="var(--amber)" stroke-width="2"></path>
+            <line x1="4" y1="46" x2="52" y2="46" stroke="var(--ink)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">06</span>
+        </div>
+        <h3><a class="card-link" href="https://github.com/Bikebrainz/DSP-Project" title="emcast — source & docs">EMCAST<span class="lnk" aria-hidden="true"> ↗</span></a></h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Data over sound — BFSK modem with Reed–Solomon FEC, in C++.</p>
+        <div class="card-foot">
+          <span class="tag">OPEN SOURCE</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-van">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="21" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <line x1="7" y1="28" x2="49" y2="28" stroke="var(--ink)" stroke-width="2"></line>
+            <g class="g-anim g-origin"><path d="M28 2 L33 11 L23 11 Z" fill="var(--amber)"></path></g>
+          </svg>
+          <span class="card-no" aria-hidden="true">07</span>
+        </div>
+        <h3>VANTAGE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Live global risk on one globe — open feeds fused, read by a local AI analyst.</p>
+        <div class="card-foot">
+          <span class="tag">DESKTOP</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-wifi">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="10" y="40" width="8" height="8" fill="var(--amber)"></rect>
+            <path d="M14 34 A10 10 0 0 1 24 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path d="M14 26 A18 18 0 0 1 32 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path d="M14 18 A26 26 0 0 1 40 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <circle class="g-anim" cx="44" cy="16" r="4" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">08</span>
+        </div>
+        <h3>WIFI SENSE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Whole-area motion sensing from a stock WiFi NIC. No hardware — just RSSI.</p>
+        <div class="card-foot">
+          <span class="tag">DESKTOP</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+      <article class="card card-sun">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="24" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="1 5"></circle>
+            <circle cx="28" cy="28" r="17" fill="var(--amber)"></circle>
+            <g class="g-anim g-origin"><circle cx="22" cy="24" r="2.5" fill="var(--card)"></circle><circle cx="33" cy="30" r="3" fill="var(--card)"></circle><circle cx="27" cy="35" r="2" fill="var(--card)"></circle></g>
+          </svg>
+          <span class="card-no" aria-hidden="true">09</span>
+        </div>
+        <h3><a class="card-link" href="https://github.com/Bikebrainz/NeuralNetwork" title="Sunspot — source">SUNSPOT<span class="lnk" aria-hidden="true"> ↗</span></a></h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>A solar-cycle forecaster — hand-rolled backprop in pure C, no frameworks.</p>
+        <div class="card-foot">
+          <span class="tag">OPEN SOURCE</span>
+          <span class="status" title="Status: live" aria-label="Status: signal locked"><span class="bars" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span></span>LOCK</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="band" aria-labelledby="about-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="about-h">ABOUT</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="about">
+      <div class="about-glyphs" aria-hidden="true">
+        <div class="about-glyph"><svg viewBox="0 0 48 48" width="44" height="44"><circle cx="24" cy="24" r="20" fill="none" stroke="var(--amber)" stroke-width="2"></circle></svg><span>CARRIER</span></div>
+        <div class="about-glyph"><svg viewBox="0 0 48 48" width="44" height="44"><path d="M24 4 L44 44 L4 44 Z" fill="none" stroke="var(--ink)" stroke-width="2"></path></svg><span>FILTER</span></div>
+        <div class="about-glyph"><svg viewBox="0 0 48 48" width="44" height="44"><rect x="4" y="4" width="40" height="40" fill="none" stroke="var(--ink)" stroke-width="2"></rect></svg><span>ARTIFACT</span></div>
+      </div>
+      <p class="about-body">One builder, many carriers. Every project starts as a demodulation problem — a raw stream nobody reads — and ships as a tool that reads it. Nothing here is a demo; everything is deployed.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 42 41 55 44 48 4F 55 53 45</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">BAUDHOUSE&nbsp;&nbsp;·&nbsp;&nbsp;SIGNAL FROM NOISE</span>
+    <span class="foot-links">
+      <a href="https://github.com/baudhouse">github.com/baudhouse</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>
