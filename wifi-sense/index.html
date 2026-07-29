@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WIFI SENSE — motion sensing with hardware you already own</title>
+<meta name="description" content="Coarse whole-area motion sensing on a stock Windows WiFi NIC. No drivers, no reboots — and honest about what it doesn't do.">
+<link rel="canonical" href="https://baudhouse.com/wifi-sense/">
+<meta property="og:title" content="WIFI SENSE — motion sensing with hardware you already own">
+<meta property="og:description" content="Whole-area presence from per-AP signal strength. It knows something moved. Not who. Not where.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/wifi-sense/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Crect x='12' y='44' width='9' height='9' fill='%23FFB000'/%3E%3Ccircle cx='48' cy='18' r='5' fill='%23FFB000'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="WiFi Sense">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">08&nbsp;&nbsp;·&nbsp;&nbsp;DESKTOP&nbsp;&nbsp;·&nbsp;&nbsp;WHOLE-AREA PRESENCE</p>
+      <p class="fig on est" aria-hidden="true">FIG. 08 — STOCK NIC, RSSI ONLY, NO NEW HARDWARE</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">WIFI SENSE</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Motion sensing with hardware you already own.</p>
+        <p class="thesis-body">Reads per-AP signal strength off the WiFi radio already in your Windows machine, and flags motion when several nearby links are disturbed at once. Coarse by design — <a href="#nots">read what it doesn't do</a> before the features.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <a class="btn-dl" href="https://github.com/Bikebrainz/wifi-sense">VIEW THE SOURCE<span aria-hidden="true">↗</span></a>
+          <p class="os-note">NO BUILD PUBLISHED YET — WINDOWS ONLY WHEN IT SHIPS.</p>
+          <div class="dl-row">
+            <a href="https://github.com/Bikebrainz/wifi-sense/releases">WATCH FOR RELEASES ↗</a>
+            <a href="#nots">WHY WINDOWS-ONLY ↓</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 · PROOF -->
+<section class="band" aria-labelledby="proof-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="proof-h">PROOF OF SIGNAL</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">CAPTURE PENDING</span>
+    </div>
+    <div class="pending">
+      <strong>PROOF SHOT PENDING</strong>
+      A real screenshot of the dashboard at 127.0.0.1:8731 goes here — live RSSI with an actual motion event.
+    </div>
+  </div>
+</section>
+
+<!-- 02 · DOESN'T -->
+<section class="band" id="nots" aria-labelledby="nots-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="nots-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">READ THIS FIRST</span>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:32px 64px;align-items:flex-start;justify-content:space-between">
+      <p class="oss-statement" style="margin:0;max-width:520px">IT KNOWS SOMETHING MOVED<span class="oss-dot">.</span><br>NOT WHO. NOT WHERE.</p>
+      <div class="doesnt" style="max-width:480px;gap:14px">
+        <p style="color:var(--ink)">Not imaging. Not through-wall tracking. Not per-person identification.</p>
+        <p>No localization. One receiver has no bearing; the dashboard's radial view is organized by RF channel, not physical direction.</p>
+        <p>Windows throttles scans below 1 Hz. It misses subtle motion and is tuned to not false-alarm, in that order.</p>
+        <p>Synthetic benchmark: ~30% detection at 0% false positives. That is an upper bound, not a promise — measure on your own floor plan.</p>
+        <p>Active scanning briefly pulls the radio off-channel and can nick your own WiFi throughput.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · DOES -->
+<section class="band" aria-labelledby="does-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="does-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">3 CLAIMS · ALL CHECKABLE</span>
+    </div>
+    <div class="grid">
+      <article class="card card-wifi">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="10" y="40" width="8" height="8" fill="var(--amber)"></rect>
+            <path d="M14 34 A10 10 0 0 1 24 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path d="M14 26 A18 18 0 0 1 32 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path d="M14 18 A26 26 0 0 1 40 44" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <circle class="g-anim" cx="44" cy="16" r="4" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">A</span>
+        </div>
+        <h3>STOCK NIC</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>The radio already in the machine. wlanapi reads real signed dBm per access point — not the 0–100% quality number, and no monitor mode.</p>
+        <div class="card-foot">
+          <span class="tag">WLANAPI</span>
+          <span class="status">PURE STDLIB</span>
+        </div>
+      </article>
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="17" y="8" width="32" height="40" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <line x1="26" y1="18" x2="42" y2="18" stroke="var(--ink)" stroke-width="2"></line>
+            <line x1="26" y1="38" x2="42" y2="38" stroke="var(--ink)" stroke-width="2"></line>
+            <line class="g-anim" x1="2" y1="28" x2="26" y2="28" stroke="var(--amber)" stroke-width="2"></line>
+            <circle class="g-anim" cx="26" cy="28" r="3" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">B</span>
+        </div>
+        <h3>NO DRIVERS. NO REBOOTS.</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Userland only — no kernel driver, no admin rights, no install step. Unzip, run, done. Uninstall is deleting a folder.</p>
+        <div class="card-foot">
+          <span class="tag">USERLAND</span>
+          <span class="status">NO ADMIN</span>
+        </div>
+      </article>
+      <article class="card card-six">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="21" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <g class="g-anim g-origin"><circle cx="28" cy="11" r="2.5" fill="var(--ink)"></circle><circle cx="42" cy="35" r="2.5" fill="var(--ink)"></circle><circle cx="14" cy="37" r="2.5" fill="var(--ink)"></circle></g>
+            <circle cx="28" cy="28" r="3.5" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">C</span>
+        </div>
+        <h3>WHOLE-AREA PRESENCE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Every access point in range becomes a tripwire. Cross an RX→AP path anywhere in the space and the disturbance registers.</p>
+        <div class="card-foot">
+          <span class="tag">TOP-K FUSION</span>
+          <span class="status">ADAPTIVE BASELINE</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 57 49 46 49 20 53 45 4E 53 45</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">WIFI SENSE&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 08</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="https://github.com/Bikebrainz/wifi-sense">github.com/Bikebrainz/wifi-sense</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='WIFI SENSE';</script>
+<script src="../child.js"></script>
+</body>
+</html>

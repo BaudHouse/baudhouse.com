@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SLIPSTREAM — a torrent client that installs its own engine</title>
+<meta name="description" content="A torrent client that installs and manages its own qBittorrent engine — verified against a pinned SHA-256, isolated profile, credentials in the OS keychain.">
+<link rel="canonical" href="https://baudhouse.com/slipstream/">
+<meta property="og:title" content="SLIPSTREAM — a torrent client that installs its own engine">
+<meta property="og:description" content="Managed engine, keychain credentials, RSS and search built in. Tauri + Rust.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/slipstream/">
+<meta property="og:image" content="https://baudhouse.com/slipstream/assets/aurora-full.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Cpath d='M24 14 L52 32 L24 50 Z' fill='%23FFB000'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="Slipstream">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">04&nbsp;&nbsp;·&nbsp;&nbsp;DESKTOP</p>
+      <p class="fig on est" aria-hidden="true">FIG. 04 — TAURI SHELL · QBITTORRENT ENGINE</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">SLIPSTREAM</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">A torrent client that installs and manages its own engine.</p>
+        <p class="thesis-body">One click downloads the official qBittorrent installer, verifies it against a pinned SHA-256, and runs an isolated instance — own profile, own port, own credentials. Your existing setup is never touched.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <a class="btn-dl" href="https://github.com/Bikebrainz/slipstream/releases/latest/download/Slipstream_0.4.0_x64-setup.exe">DOWNLOAD FOR WINDOWS<span aria-hidden="true">↓</span></a>
+          <p class="os-note" id="os-note"></p>
+          <div class="dl-row">
+            <a href="https://github.com/Bikebrainz/slipstream/releases">ALL RELEASES ↗</a>
+            <span>MACOS · LINUX — PLANNED</span>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>VERSION</dt><dd>0.4.0 · AURORA</dd>
+          <dt>RELEASED</dt><dd>2026-07-21</dd>
+          <dt>SIZE</dt><dd>4.06 MB</dd>
+          <dt>SHA256</dt><dd><button type="button" class="sha-btn" id="sha-copy" title="Click to copy the full hash" data-sha="1dc61364affe4159517d7cd36d366a5bafbcaf96104a8abd9ee49687185fd6bf"></button></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 · PROOF -->
+<section class="band" aria-labelledby="proof-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="proof-h">THE COMMAND DECK</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">V0.4.0 — AURORA</span>
+    </div>
+    <img class="proof" src="assets/aurora-full.png" alt="Slipstream Aurora UI — the Transfers view at full window: sidebar filters, live throughput sparklines, fifteen torrents in a dense table, status bar">
+  </div>
+</section>
+
+<!-- 02 · DOES -->
+<section class="band" aria-labelledby="does-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="does-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-slip">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M20 10 L48 28 L20 46 Z" fill="var(--ink)"></path>
+            <g class="g-anim"><line x1="6" y1="18" x2="16" y2="18" stroke="var(--amber)" stroke-width="2"></line><line x1="2" y1="28" x2="14" y2="28" stroke="var(--amber)" stroke-width="2"></line><line x1="6" y1="38" x2="16" y2="38" stroke="var(--amber)" stroke-width="2"></line></g>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>MANAGED ENGINE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>No engine installed? One button fetches the official qBittorrent installer, verifies it against a pinned SHA-256, and boots an isolated instance — own profile, port, and credentials. Yours stays untouched.</p>
+      </article>
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="7" y="7" width="42" height="42" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle cx="28" cy="23" r="7" fill="none" stroke="var(--amber)" stroke-width="2"></circle>
+            <line class="g-anim g-origin" x1="28" y1="30" x2="28" y2="42" stroke="var(--amber)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>KEYCHAIN CREDENTIALS</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Engine credentials are generated per machine and live in the OS keychain — not in a config file, not in plaintext. The frontend talks to the engine over localhost HTTP, nothing else.</p>
+      </article>
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="14" cy="42" r="4" fill="var(--amber)"></circle>
+            <path class="g-anim" d="M10 28 A18 18 0 0 1 28 46" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path class="g-anim" d="M10 16 A30 30 0 0 1 40 46" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>RSS + SEARCH, BUILT IN</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Feeds with auto-download rules and multi-plugin search live inside the client. No browser round-trips — results land straight in the transfer list.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · DOESN'T -->
+<section class="band" aria-labelledby="doesnt-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="doesnt-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="doesnt">
+      <p>It doesn't find content. No indexers, no catalog, no discovery. Slipstream manages transfers you already have — where they come from is your business.</p>
+      <p>It doesn't torrent by itself. The engine is qBittorrent — official build, GPL, separate process — driven at arm's length over localhost. Slipstream installs it, supervises it, and stays out of its way.</p>
+      <p>It isn't code-signed yet. Windows SmartScreen will say <strong>"Windows protected your PC — unknown publisher."</strong> Click <strong>More info</strong>, then <strong>Run anyway</strong> — or verify the hash below first. Signing ships the day the certificate does; the release pipeline is already wired for it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 04 · VERIFY -->
+<section class="band" aria-labelledby="verify-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">04</span>
+      <h2 id="verify-h">VERIFY THE BITS</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">SHA-256 + MARK-OF-THE-WEB</span>
+    </div>
+<pre class="verify"><span class="c"># PowerShell — check the installer against the published hash</span>
+Get-FileHash .\Slipstream_0.4.0_x64-setup.exe -Algorithm SHA256
+<span class="c"># expected:</span>
+<span class="h">1dc61364affe4159517d7cd36d366a5bafbcaf96104a8abd9ee49687185fd6bf</span>
+
+<span class="c"># unsigned build: clear the Mark-of-the-Web, or the installer can be silently blocked</span>
+Unblock-File .\Slipstream_0.4.0_x64-setup.exe
+.\Slipstream_0.4.0_x64-setup.exe</pre>
+    <p class="note">Updates are additionally verified in-app with a minisign signature before they apply.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 53 4C 49 50 53 54 52 45 41 4D</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">SLIPSTREAM&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 04</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="https://github.com/Bikebrainz/slipstream">github.com/Bikebrainz/slipstream</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='SLIPSTREAM';</script>
+<script src="../child.js"></script>
+</body>
+</html>
