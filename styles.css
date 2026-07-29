@@ -117,6 +117,11 @@ h1{margin:0 0 clamp(28px,5vw,56px);font:700 clamp(44px,13.5vw,176px)/0.94 var(--
 .about-glyph svg{display:block}
 .about-glyph span{font:400 10px/1 var(--mono);letter-spacing:.14em;color:var(--faint)}
 .about-body{margin:0;max-width:560px;font:400 clamp(17px,2vw,20px)/1.6 var(--disp);text-wrap:pretty}
+.oss{margin-top:clamp(40px,6vw,64px);border-top:1px solid var(--rule);padding-top:32px;display:flex;flex-wrap:wrap;gap:24px 64px;align-items:flex-end;justify-content:space-between}
+.oss-statement{margin:0;font:700 clamp(26px,4.6vw,52px)/1.02 var(--disp);letter-spacing:-0.03em;text-wrap:balance}
+.oss-dot{color:var(--amber)}
+.oss-counter{margin:0;max-width:340px;font:400 13px/1.7 var(--mono);letter-spacing:.02em;color:var(--dim);text-wrap:pretty}
+.oss-fact{color:var(--faint)}
 
 /* footer */
 .wave-wrap{padding-top:40px}
