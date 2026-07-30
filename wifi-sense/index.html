@@ -49,13 +49,19 @@
       </div>
       <div class="hero-actions">
         <div class="dl-col">
-          <a class="btn-dl" href="https://github.com/Bikebrainz/wifi-sense">VIEW THE SOURCE<span aria-hidden="true">↗</span></a>
-          <p class="os-note">NO BUILD PUBLISHED YET — WINDOWS ONLY WHEN IT SHIPS.</p>
+          <a class="btn-dl" href="https://github.com/Bikebrainz/wifi-sense/releases/latest/download/wifi-sense-0.1.0-portable-win.zip">DOWNLOAD PORTABLE ZIP<span aria-hidden="true">↓</span></a>
+          <p class="os-note" id="os-note"></p>
           <div class="dl-row">
-            <a href="https://github.com/Bikebrainz/wifi-sense/releases">WATCH FOR RELEASES ↗</a>
+            <a href="https://github.com/Bikebrainz/wifi-sense">VIEW THE SOURCE ↗</a>
             <a href="#nots">WHY WINDOWS-ONLY ↓</a>
           </div>
         </div>
+        <dl class="meta">
+          <dt>VERSION</dt><dd>0.1.0</dd>
+          <dt>RELEASED</dt><dd>2026-07-30</dd>
+          <dt>SIZE</dt><dd>16 KB · PORTABLE</dd>
+          <dt>SHA256</dt><dd><button type="button" class="sha-btn" id="sha-copy" title="Click to copy the full hash" data-sha="81f927d4c4d9e118f382aee93730a3bc2c06dfeb7b8c1a3a59d5079eab5a0e9d"></button></dd>
+        </dl>
       </div>
     </div>
   </div>
@@ -88,6 +94,7 @@
       <p class="oss-statement" style="margin:0;max-width:520px">IT KNOWS SOMETHING MOVED<span class="oss-dot">.</span><br>NOT WHO. NOT WHERE.</p>
       <div class="doesnt" style="max-width:480px;gap:14px">
         <p style="color:var(--ink)">Not imaging. Not through-wall tracking. Not per-person identification.</p>
+        <p>It is 16 KB of pure stdlib Python, not a compiled binary — a system Python 3.10+ has to already be on PATH.</p>
         <p>No localization. One receiver has no bearing; the dashboard's radial view is organized by RF channel, not physical direction.</p>
         <p>Windows throttles scans below 1 Hz. It misses subtle motion and is tuned to not false-alarm, in that order.</p>
         <p>Synthetic benchmark: ~30% detection at 0% false positives. That is an upper bound, not a promise — measure on your own floor plan.</p>

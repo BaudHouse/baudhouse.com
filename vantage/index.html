@@ -49,12 +49,19 @@
       </div>
       <div class="hero-actions">
         <div class="dl-col">
-          <a class="btn-dl" href="https://github.com/Bikebrainz/vantage">VIEW THE SOURCE<span aria-hidden="true">↗</span></a>
-          <p class="os-note">NO BUILD PUBLISHED YET — WINDOWS FIRST WHEN IT SHIPS.</p>
+          <a class="btn-dl" href="https://github.com/Bikebrainz/vantage/releases/latest/download/Vantage.Setup.0.1.0.exe">DOWNLOAD FOR WINDOWS<span aria-hidden="true">↓</span></a>
+          <p class="os-note" id="os-note"></p>
           <div class="dl-row">
-            <a href="https://github.com/Bikebrainz/vantage/releases">WATCH FOR RELEASES ↗</a>
+            <a href="https://github.com/Bikebrainz/vantage">VIEW THE SOURCE ↗</a>
+            <span>MACOS · LINUX — PLANNED</span>
           </div>
         </div>
+        <dl class="meta">
+          <dt>VERSION</dt><dd>0.1.0</dd>
+          <dt>RELEASED</dt><dd>2026-07-30</dd>
+          <dt>SIZE</dt><dd>110.5 MB</dd>
+          <dt>SHA256</dt><dd><button type="button" class="sha-btn" id="sha-copy" title="Click to copy the full hash" data-sha="12696619c59870682ecf95e8fd319140af5c1400705ae19d71914304ce488dac"></button></dd>
+        </dl>
       </div>
     </div>
   </div>
@@ -143,7 +150,29 @@
       <p>It is a situational picture, not an intelligence-grade product. The analyst is a local model reading open feeds, and it is only ever as good as they are.</p>
       <p>It is not predictive. Projections are statistical, carry stated uncertainty, and get graded against what actually happened.</p>
       <p>It degrades when an upstream feed goes down. Vantage shows you the gap; it can't fill it.</p>
+      <p>The installer isn't code-signed yet. Windows SmartScreen will warn about an unknown publisher — verify the hash below, or click <strong>More info</strong> then <strong>Run anyway</strong>.</p>
     </div>
+  </div>
+</section>
+
+<!-- 04 · VERIFY -->
+<section class="band" aria-labelledby="verify-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">04</span>
+      <h2 id="verify-h">VERIFY THE BITS</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">SHA-256 + MARK-OF-THE-WEB</span>
+    </div>
+<pre class="verify"><span class="c"># PowerShell — check the installer against the published hash</span>
+Get-FileHash .\Vantage.Setup.0.1.0.exe -Algorithm SHA256
+<span class="c"># expected:</span>
+<span class="h">12696619c59870682ecf95e8fd319140af5c1400705ae19d71914304ce488dac</span>
+
+<span class="c"># unsigned build: clear the Mark-of-the-Web first, or the installer can be silently blocked</span>
+Unblock-File .\Vantage.Setup.0.1.0.exe
+.\Vantage.Setup.0.1.0.exe</pre>
+    <p class="note">SHA256SUMS.txt is published alongside every release.</p>
   </div>
 </section>
 
