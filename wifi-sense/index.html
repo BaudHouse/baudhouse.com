@@ -10,7 +10,7 @@
 <meta property="og:description" content="Whole-area presence from per-AP signal strength. It knows something moved. Not who. Not where.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baudhouse.com/wifi-sense/">
-<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta property="og:image" content="https://baudhouse.com/wifi-sense/assets/dashboard.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
 <meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
@@ -68,12 +68,10 @@
       <span class="band-no" aria-hidden="true">01</span>
       <h2 id="proof-h">PROOF OF SIGNAL</h2>
       <span class="band-rule" aria-hidden="true"></span>
-      <span class="band-count">CAPTURE PENDING</span>
+      <span class="band-count">LIVE CAPTURE · NAMES MASKED</span>
     </div>
-    <div class="pending">
-      <strong>PROOF SHOT PENDING</strong>
-      A real screenshot of the dashboard at 127.0.0.1:8731 goes here — live RSSI with an actual motion event.
-    </div>
+    <img class="proof" src="assets/dashboard.png" alt="WiFi Sense dashboard at 127.0.0.1:8731 — strongest-AP RSSI over the last 60 seconds, multi-AP movement energy against the quiet baseline, per-channel disturbance view, and 23 live access points with signal strength and disturbance deltas">
+    <p class="note">Real capture from a stock Intel NIC — 23 access points, unmodified RSSI and disturbance values. Network names and BSSIDs are masked: they are indexed by public wardriving databases and would give away the receiver's location.</p>
   </div>
 </section>
 
