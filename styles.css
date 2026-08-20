@@ -124,6 +124,12 @@ h1{margin:0 0 clamp(28px,5vw,56px);font:700 clamp(44px,13.5vw,176px)/0.94 var(--
 .card-van:hover .g-anim,.card-van:focus-within .g-anim{transform:rotate(45deg)}
 .card-wifi:hover .g-anim,.card-wifi:focus-within .g-anim{transform:translate(-6px,6px)}
 .card-sun:hover .g-anim,.card-sun:focus-within .g-anim{transform:rotate(60deg)}
+/* bulwark: the wall interposes itself in front of what it protects */
+.card-bul:hover .g-anim,.card-bul:focus-within .g-anim{transform:translateX(15px)}
+/* ransomguard: the canary file trips */
+.card-ran:hover .g-anim,.card-ran:focus-within .g-anim{transform:rotate(45deg)}
+/* carryon: the payload carries across to the new machine */
+.card-car:hover .g-anim,.card-car:focus-within .g-anim{transform:translateX(18px)}
 
 /* about */
 .about{display:flex;flex-wrap:wrap;gap:40px 64px;align-items:flex-start}
