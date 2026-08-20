@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BULWARK - American-built, Kaspersky-class endpoint security</title>
+<meta name="description" content="A memory-safe, Rust-native antivirus and threat-exposure suite for Windows. Independent clean-room build, US jurisdiction.">
+<link rel="canonical" href="https://baudhouse.com/bulwark/">
+<meta property="og:title" content="BULWARK - American-built, Kaspersky-class endpoint security">
+<meta property="og:description" content="A memory-safe, Rust-native antivirus and threat-exposure suite for Windows. Independent clean-room build, US jurisdiction.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/bulwark/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Crect x='14' y='8' width='12' height='48' fill='%23FFB000'/%3E%3Ccircle cx='42' cy='32' r='14' fill='none' stroke='%23E8E8E8' stroke-width='4'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="BULWARK">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">10&nbsp;&nbsp;·&nbsp;&nbsp;DESKTOP</p>
+      <p class="fig on est" aria-hidden="true">FIG. 10 — RUST WORKSPACE · WINDOWS · CLEAN-ROOM</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">BULWARK</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">American-built, Kaspersky-class endpoint security.</p>
+        <p class="thesis-body">A memory-safe, Rust-native antivirus and threat-exposure suite for Windows — real-time protection, an encrypted quarantine vault, and breach monitoring, under US jurisdiction.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <div class="lab">
+            <strong>IN THE LAB</strong>
+            No public build yet. Source is private while it is being built.
+          </div>
+          <div class="dl-row">
+            <a href="mailto:signal@baudhouse.com?subject=BULWARK%20early%20access">ASK ABOUT EARLY ACCESS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>STATUS</dt><dd>PRE-RELEASE</dd>
+          <dt>PLATFORM</dt><dd>WINDOWS</dd>
+          <dt>BUILT IN</dt><dd>RUST</dd>
+          <dt>LICENSE</dt><dd>APACHE-2.0</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="band" aria-labelledby="ctx-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="ctx-h">WHY IT EXISTS</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">ICTS · E.O. 13873</span>
+    </div>
+    <div class="doesnt" style="max-width:76ch">
+      <p>On <strong>20 June 2024</strong> the U.S. Commerce Department’s Bureau of Industry and Security issued its first-ever Final Determination under the ICTS supply-chain authority, banning Kaspersky products in the United States on national-security grounds tied to Russian jurisdiction.</p>
+      <p>By <strong>20 July 2024</strong> Kaspersky was barred from new U.S. sales. By <strong>29 September 2024</strong> it was barred from delivering signature and codebase updates, and from operating its reputation cloud for U.S. users.</p>
+      <p>Millions of users were left on security software that would receive no new signatures and no cloud protection, degrading to unprotected over time. Bulwark is a replacement built from first principles for that gap.</p>
+      <p style="color:var(--ink)">Positioning, not affiliation. Bulwark is an independent clean-room product. It is not affiliated with, derived from, or containing any Kaspersky code — "Kaspersky-class" names the target feature bar, not the implementation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band" aria-labelledby="does-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="does-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-bul">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="38" cy="28" r="14" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <rect class="g-anim" x="13" y="4" width="11" height="48" fill="var(--amber)"></rect>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>THE ENGINE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Hash matching, YARA rules, PE heuristics, entropy analysis and archive inspection — written in Rust, because a parser that reads hostile files all day should not be able to overflow a buffer.</p>
+      </article>
+
+      <article class="card card-ran">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="7" y="7" width="42" height="42" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle class="g-anim g-origin" cx="28" cy="28" r="9" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>ENCRYPTED QUARANTINE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Caught files go into an encrypted vault with a restore ledger, so a false positive is reversible rather than destructive.</p>
+      </article>
+
+      <article class="card card-car">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="16" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <line class="g-anim g-origin" x1="15" y1="41" x2="41" y2="15" stroke="var(--amber)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>EXPOSURE MONITORING</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Checks whether your credentials have surfaced in a known breach using k-anonymity — the password never leaves the machine, and no API key is required.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="band" aria-labelledby="doesnt-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="doesnt-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It is not a drop-in replacement for a twenty-year commercial product on day one, and does not claim to be.</p>
+      <p>Parts that genuinely require vendor infrastructure — a WHQL/EV-signed kernel minifilter, Microsoft Virus Initiative membership for Windows Security Center registration, a hosted reputation cloud, commercial malware feeds, code-signing certificates — are built up to their integration boundary and marked as such. They are never faked.</p>
+      <p>It is not code-signed yet, so Windows will warn about an unknown publisher until a certificate is in place.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 42 55 4C 57 41 52 4B</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">BULWARK&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 10</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='BULWARK';</script>
+<script src="../child.js"></script>
+</body>
+</html>

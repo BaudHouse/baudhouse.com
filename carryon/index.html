@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>CARRYON - carry your digital life to your new PC</title>
+<meta name="description" content="Auto-scans a Windows PC, packages logins, cookies, app settings, Wi-Fi and files into one verifiable bundle, and restores it on the new machine.">
+<link rel="canonical" href="https://baudhouse.com/carryon/">
+<meta property="og:title" content="CARRYON - carry your digital life to your new PC">
+<meta property="og:description" content="Auto-scans a Windows PC, packages logins, cookies, app settings, Wi-Fi and files into one verifiable bundle, and restores it on the new machine.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/carryon/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Crect x='4' y='16' width='18' height='32' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3Crect x='42' y='16' width='18' height='32' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3Crect x='27' y='27' width='10' height='10' fill='%23FFB000'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="CARRYON">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">12&nbsp;&nbsp;·&nbsp;&nbsp;DESKTOP</p>
+      <p class="fig on est" aria-hidden="true">FIG. 12 — SCAN · CAPTURE · RESTORE</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">CARRYON</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Carry your digital life to your new PC.</p>
+        <p class="thesis-body">Auto-scans a Windows PC, packages the things you would actually miss — browser logins, cookies, bookmarks, app settings, Wi-Fi, your own files — into a single verifiable bundle, and restores it on the new machine with one command.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <div class="lab">
+            <strong>IN THE LAB</strong>
+            No public build yet. Source is private while it is being built.
+          </div>
+          <div class="dl-row">
+            <a href="mailto:signal@baudhouse.com?subject=CARRYON%20early%20access">ASK ABOUT EARLY ACCESS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>STATUS</dt><dd>PRE-RELEASE</dd>
+          <dt>PLATFORM</dt><dd>WINDOWS</dd>
+          <dt>BUILT IN</dt><dd>PYTHON + TAURI</dd>
+          <dt>LICENSE</dt><dd>SEE REPO</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="band" aria-labelledby="ctx-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="ctx-h">WHY IT IS DIFFERENT</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">DPAPI · APP-BOUND ENCRYPTION</span>
+    </div>
+    <div class="doesnt" style="max-width:76ch">
+      <p>Most "just copy your profile folder" advice quietly fails. Chrome and Edge encrypt passwords and cookies to the <strong>original</strong> Windows account — DPAPI, and since Chrome 127 in 2024, App-Bound Encryption. Copy those files to a new PC and they are unreadable.</p>
+      <p>CarryOn knows this and does the right thing per item. Bookmarks, history and autofill copy automatically everywhere. Firefox passwords, cookies and extensions move with the profile. Chrome and Edge passwords and cookies are sealed to the old machine, so it reduces those to one guided export and opens the import page for you on the new PC.</p>
+      <p style="color:var(--ink)">Everything it can move by copy, it moves. Everything it cannot, it detects, explains why, and walks you through — instead of pretending it copied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band" aria-labelledby="does-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="does-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-car">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="2" y="12" width="17" height="32" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="37" y="12" width="17" height="32" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect class="g-anim" x="23" y="23" width="11" height="11" fill="var(--amber)"></rect>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>IT KNOWS WHAT ACTUALLY MOVES</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Per-item handling rather than a blind folder copy: what can be carried is carried, what is sealed to the old machine is flagged and guided, and the difference is stated plainly up front.</p>
+      </article>
+
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="9" y="21" width="38" height="27" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <path class="g-anim g-origin" d="M18 21 V15 A10 10 0 0 1 38 15 V21" fill="none" stroke="var(--amber)" stroke-width="2"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>A VERIFIABLE BUNDLE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Everything lands in one bundle with checksums, so you can confirm it is intact before trusting it. Restore previews with a dry run first, and anything it overwrites is backed up.</p>
+      </article>
+
+      <article class="card card-slip">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="10" cy="28" r="5" fill="var(--amber)"></circle>
+            <circle cx="46" cy="28" r="5" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <line class="g-anim" x1="18" y1="28" x2="39" y2="28" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 4"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>NO STICK REQUIRED</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Put the bundle on a USB stick, or send it straight to the new PC across your own network. Either way it never passes through anyone else’s cloud.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="band" aria-labelledby="doesnt-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="doesnt-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It cannot move Chrome or Edge saved passwords and cookies by copy. Windows seals them to the original machine, and no tool can honestly claim otherwise — so those become one guided export instead of a silent failure.</p>
+      <p>It is not a disk-imaging tool and not a backup product. It carries the state you would miss, not the whole machine.</p>
+      <p>It reads credential stores in order to migrate them, which is exactly the capability you should be sceptical of in software you did not build yourself. That is the argument for publishing the source.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 43 41 52 52 59 4F 4E</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">CARRYON&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 12</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='CARRYON';</script>
+<script src="../child.js"></script>
+</body>
+</html>

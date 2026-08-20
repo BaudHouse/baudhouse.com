@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RANSOMGUARD - behavioral anti-ransomware for the endpoint</title>
+<meta name="description" content="Fuses canary files, entropy, burst rates, extensions, ransom notes and recovery tampering into one live risk score, then suspends and terminates the attacker.">
+<link rel="canonical" href="https://baudhouse.com/ransomguard/">
+<meta property="og:title" content="RANSOMGUARD - behavioral anti-ransomware for the endpoint">
+<meta property="og:description" content="Fuses canary files, entropy, burst rates, extensions, ransom notes and recovery tampering into one live risk score, then suspends and terminates the attacker.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/ransomguard/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Crect x='26' y='26' width='12' height='12' fill='%23FFB000'/%3E%3Crect x='8' y='8' width='12' height='12' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3Crect x='44' y='44' width='12' height='12' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="RANSOMGUARD">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">11&nbsp;&nbsp;·&nbsp;&nbsp;DESKTOP</p>
+      <p class="fig on est" aria-hidden="true">FIG. 11 — SIX SIGNALS · ONE DECAYING SCORE</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">RANSOMGUARD</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Behavioral anti-ransomware for the endpoint.</p>
+        <p class="thesis-body">Watches your files in real time and correlates several independent signals that together characterise a file-encrypting attack — then alerts and, optionally, suspends and terminates the attacking process before it reaches your whole drive.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <div class="lab">
+            <strong>IN THE LAB</strong>
+            No public build yet. Source is private while it is being built.
+          </div>
+          <div class="dl-row">
+            <a href="mailto:signal@baudhouse.com?subject=RANSOMGUARD%20early%20access">ASK ABOUT EARLY ACCESS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>STATUS</dt><dd>PRE-RELEASE</dd>
+          <dt>PLATFORM</dt><dd>WINDOWS</dd>
+          <dt>BUILT IN</dt><dd>PYTHON + C DRIVER</dd>
+          <dt>LICENSE</dt><dd>SEE REPO</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 01 -->
+<section class="band" aria-labelledby="ctx-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="ctx-h">HOW IT DETECTS AN ATTACK</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">NO SINGLE SIGNAL IS TRUSTED</span>
+    </div>
+    <div class="doesnt" style="max-width:76ch;margin-bottom:28px">
+      <p>Built around one idea: no single signal is trustworthy, so fuse several weak ones. Entropy can be faked, extensions vary, ransom-note names change — but a process that trips a decoy file <strong>and</strong> rewrites files with high-entropy content <strong>and</strong> re-extensions them <strong>and</strong> does it in a burst is unmistakable.</p>
+    </div>
+<pre class="verify"><span class="c"># six independent signals feed one decaying, weighted risk score</span>
+RANSOMWARE SUSPECTED - <span class="h">CRITICAL score=100.0</span>: 3 high-entropy writes; 3 files re-extensioned
+  involved files: document_000.docx.encrypted, document_001.docx.encrypted, ...
+suspend   pid 80336 (python.exe): suspended
+terminate pid 80336 (python.exe): terminated</pre>
+    <p class="note">Output from the detector against its own simulated attack.</p>
+  </div>
+</section>
+
+<!-- 02 -->
+<section class="band" aria-labelledby="does-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="does-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-ran">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="7" y="7" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="22" y="7" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="37" y="7" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="7" y="22" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect class="g-anim" x="22" y="22" width="12" height="12" fill="var(--amber)" style="transform-origin:28px 28px"></rect>
+            <rect x="37" y="22" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="7" y="37" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="22" y="37" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect x="37" y="37" width="12" height="12" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>CANARY FILES</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Hidden decoys planted in every protected folder. Nothing legitimate ever touches them, so a write or rename on one is near-certain ransomware — the highest-confidence signal it has.</p>
+      </article>
+
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path class="g-anim" d="M4 38 H12 V18 H24 V38 H32 V18 H40 V38 H52" fill="none" stroke="var(--amber)" stroke-width="2"></path>
+            <line x1="4" y1="46" x2="52" y2="46" stroke="var(--ink)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>ENTROPY, DONE PROPERLY</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Modern families encrypt only part of each file to keep the average low. So it measures block-wise entropy and checks magic bytes — a .docx that is no longer a ZIP, a .pdf with no %PDF header — catching partial encryption that averaging misses.</p>
+      </article>
+
+      <article class="card card-bul">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="18" fill="none" stroke="var(--ink)" stroke-width="2"></circle>
+            <line class="g-anim g-origin" x1="28" y1="9" x2="28" y2="29" stroke="var(--amber)" stroke-width="3"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>IT CAN STOP THE PROCESS</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Burst rates, known ransomware extensions, ransom-note filenames and recovery tampering round out the score. Past threshold it suspends the process, then terminates it.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 -->
+<section class="band" aria-labelledby="doesnt-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="doesnt-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">READ THIS FIRST</span>
+    </div>
+    <div class="doesnt">
+      <p>It does not decrypt files. It reduces and contains damage — it cannot undo encryption that already happened.</p>
+      <p>It complements real offline, versioned backups. It never replaces them. If you take one thing from this page, take that one.</p>
+      <p>It is behavioral, so it infers from what a process does rather than recognising what it is. A slow, quiet attacker is a harder target than a fast, loud one.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 52 41 4E 53 4F 4D 47 55 41 52 44</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">RANSOMGUARD&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 11</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='RANSOMGUARD';</script>
+<script src="../child.js"></script>
+</body>
+</html>
