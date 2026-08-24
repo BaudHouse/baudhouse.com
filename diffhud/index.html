@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DIFFHUD - a telemetry HUD for grand strategy</title>
+<meta name="description" content="Real-time telemetry extraction and a transparent always-on-top overlay for Civilization VI, Stellaris, Crusader Kings III and Europa Universalis IV.">
+<link rel="canonical" href="https://baudhouse.com/diffhud/">
+<meta property="og:title" content="DIFFHUD - a telemetry HUD for grand strategy">
+<meta property="og:description" content="Real-time telemetry extraction and a transparent always-on-top overlay for Civilization VI, Stellaris, Crusader Kings III and Europa Universalis IV.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/diffhud/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Cpath d='M22 8 L42 46 L2 46 Z' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3Cpath d='M40 22 L60 60 L20 60 Z' fill='%23FFB000'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="DIFFHUD">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">02&nbsp;&nbsp;·&nbsp;&nbsp;SAAS</p>
+      <p class="fig on est" aria-hidden="true">FIG. 02 — CIV VI - STELLARIS - CK3 - EU4</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">DIFFHUD</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">The numbers the game hides from you.</p>
+        <p class="thesis-body">Real-time telemetry extraction, a transparent always-on-top overlay, and a post-match data engine for the four-game Paradox and Civilization family.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <div class="lab">
+            <strong>IN THE LAB</strong>
+            Not open yet. The desktop build ships from private releases while it is in development.
+          </div>
+          <div class="dl-row">
+            <a href="mailto:signal@baudhouse.com?subject=DIFFHUD%20early%20access">ASK ABOUT EARLY ACCESS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>STATUS</dt><dd>PRE-RELEASE</dd>
+          <dt>SURFACE</dt><dd>OVERLAY + WEB</dd>
+          <dt>BUILT IN</dt><dd>JAVASCRIPT + ELECTRON</dd>
+          <dt>GAMES</dt><dd>4 SUPPORTED</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b01-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="b01-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-diff">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="4" y="10" width="38" height="30" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect class="g-anim" x="20" y="22" width="32" height="24" fill="none" stroke="var(--amber)" stroke-width="2"></rect>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>A REAL OVERLAY</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>A transparent, always-on-top window you keep over the game, toggled with a keystroke. Not a second monitor dashboard you have to look away to read.</p>
+      </article>
+
+      <article class="card card-six">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M4 46 H52" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path class="g-anim" d="M6 42 C18 42 20 12 30 12 C40 12 42 32 52 32" fill="none" stroke="var(--amber)" stroke-width="2"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>STATE-DRIVEN, NOT EVENT-DRIVEN</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Tempo curves, throughput and yield efficiency measured from game state over time. FPS trackers count events; a 4X game needs the shape of a whole run.</p>
+      </article>
+
+      <article class="card card-slip">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="10" y="10" width="36" height="36" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle class="g-anim g-origin" cx="28" cy="28" r="8" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>IT STAYS ON YOUR MACHINE</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>The daemon reads what the game already writes locally. Nothing is uploaded and there is nothing to configure before your first run appears.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b02-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="b02-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It only knows what the game writes down. Where a title logs little, DiffHUD can infer little.</p>
+      <p>It is four games, not every strategy game. Civilization VI, Stellaris, Crusader Kings III and Europa Universalis IV.</p>
+      <p>It does not play for you and does not automate anything in-game. It reads, measures and shows.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 44 49 46 46 48 55 44</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">DIFFHUD&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 02</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='DIFFHUD';</script>
+<script src="../child.js"></script>
+</body>
+</html>

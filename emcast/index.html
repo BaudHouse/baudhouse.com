@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EMCAST - data over sound</title>
+<meta name="description" content="A complete software modem in C++: framing, CRC, Reed-Solomon FEC, BFSK modulation and synchronisation. File in, waveform out, bit-exact file back.">
+<link rel="canonical" href="https://baudhouse.com/emcast/">
+<meta property="og:title" content="EMCAST - data over sound">
+<meta property="og:description" content="A complete software modem in C++: framing, CRC, Reed-Solomon FEC, BFSK modulation and synchronisation. File in, waveform out, bit-exact file back.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/emcast/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Cpath d='M4 42 H14 V20 H28 V42 H38 V20 H50 V42 H60' fill='none' stroke='%23FFB000' stroke-width='4'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="EMCAST">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">06&nbsp;&nbsp;·&nbsp;&nbsp;OPEN SOURCE</p>
+      <p class="fig on est" aria-hidden="true">FIG. 06 — FRAME - RS FEC - BFSK - GOERTZEL</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">EMCAST</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Data over sound.</p>
+        <p class="thesis-body">Encodes a file into a modulated audio waveform, sends it over a channel — a WAV file, a simulated noisy link, or a real speaker-to-microphone path — and decodes a bit-exact copy back out the other side.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <a class="btn-dl" href="https://github.com/Bikebrainz/DSP-Project/releases/latest/download/emcast-1.0.0-win-x64.zip">DOWNLOAD FOR WINDOWS<span aria-hidden="true">↓</span></a>
+          <p class="os-note" id="os-note"></p>
+          <div class="dl-row">
+            <a href="https://github.com/Bikebrainz/DSP-Project/releases/latest/download/emcast-1.0.0-linux-x64.tar.gz">LINUX X64 ↓</a>
+            <a href="https://github.com/Bikebrainz/DSP-Project">VIEW THE SOURCE ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>VERSION</dt><dd>1.0.0</dd>
+          <dt>RELEASED</dt><dd>2026-07-30</dd>
+          <dt>SIZE</dt><dd>0.32 MB · WIN X64</dd>
+          <dt>LICENSE</dt><dd>MIT</dd>
+          <dt>SHA256</dt><dd><button type="button" class="sha-btn" id="sha-copy" title="Click to copy the full hash" data-sha="cefac2d7da26d8a0fbfa4d3571265201baf3ca025fd39a30f317782d24d25003"></button></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b01-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="b01-h">THE SIGNAL CHAIN</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">FILE IN, FILE OUT</span>
+    </div>
+<pre class="verify"><span class="c"># every stage is reversible, and the file that comes back is bit-exact</span>
+file ─▶ frame (header + CRC) ─▶ <span class="h">Reed–Solomon FEC</span> ─▶ BFSK modulator ─▶ ┐
+                                                                     channel
+recovered file ◀─ CRC verify ◀─ RS decode ◀─ Goertzel demod + sync ◀─ ┘</pre>
+    <p class="note">The channel can be a WAV file, a simulated link with added noise, or an actual speaker and microphone in the same room.</p>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b02-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="b02-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="6" y="16" width="18" height="24" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect class="g-anim" x="30" y="16" width="20" height="24" fill="var(--amber)"></rect>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>FRAMING AND INTEGRITY</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Every payload is framed with a header and a CRC, so the receiver knows where a message starts and whether what arrived is what was sent.</p>
+      </article>
+
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <circle cx="28" cy="28" r="18" fill="none" stroke="var(--ink)" stroke-width="2" stroke-dasharray="5 4"></circle>
+            <circle class="g-anim g-origin" cx="28" cy="28" r="7" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>REED–SOLOMON FEC</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Forward error correction repairs damage in transit rather than asking for a retransmit — which matters when the channel is a room with a microphone in it.</p>
+      </article>
+
+      <article class="card card-slip">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path class="g-anim" d="M4 38 H12 V18 H24 V38 H32 V18 H40 V38 H52" fill="none" stroke="var(--amber)" stroke-width="2"></path>
+            <line x1="4" y1="46" x2="52" y2="46" stroke="var(--ink)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>BFSK AND GOERTZEL</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Binary frequency-shift keying on the way out, Goertzel tone detection and synchronisation on the way back in.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b03-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="b03-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It is a modem, not a network. There is no routing, no addressing and no protocol stack above the frame.</p>
+      <p>Audio is a slow, noisy channel. This carries small payloads reliably; it is not a way to move your files around.</p>
+      <p>It is unsigned, so Windows will warn about an unknown publisher. Verify the hash below if that matters to you.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b04-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">04</span>
+      <h2 id="b04-h">VERIFY THE BITS</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">SHA-256</span>
+    </div>
+<pre class="verify"><span class="c"># PowerShell — check the archive against the published hash</span>
+Get-FileHash .\emcast-1.0.0-win-x64.zip -Algorithm SHA256
+<span class="c"># expected:</span>
+<span class="h">cefac2d7da26d8a0fbfa4d3571265201baf3ca025fd39a30f317782d24d25003</span></pre>
+    <p class="note">SHA256SUMS.txt covering both platform archives ships with every release.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 45 4D 43 41 53 54</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">EMCAST&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 06</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="https://github.com/Bikebrainz/DSP-Project">github.com/Bikebrainz/DSP-Project</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='EMCAST';</script>
+<script src="../child.js"></script>
+</body>
+</html>

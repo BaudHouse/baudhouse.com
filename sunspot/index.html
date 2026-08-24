@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SUNSPOT - a neural network in C99, no libraries</title>
+<meta name="description" content="A dependency-free neural network written from scratch in C, including convolutional layers. ~99.3% on MNIST, and it forecasts the solar cycle.">
+<link rel="canonical" href="https://baudhouse.com/sunspot/">
+<meta property="og:title" content="SUNSPOT - a neural network in C99, no libraries">
+<meta property="og:description" content="A dependency-free neural network written from scratch in C, including convolutional layers. ~99.3% on MNIST, and it forecasts the solar cycle.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/sunspot/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='19' fill='%23FFB000'/%3E%3Ccircle cx='25' cy='27' r='3' fill='%230A0A0A'/%3E%3Ccircle cx='38' cy='34' r='4' fill='%230A0A0A'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="SUNSPOT">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">09&nbsp;&nbsp;·&nbsp;&nbsp;OPEN SOURCE</p>
+      <p class="fig on est" aria-hidden="true">FIG. 09 — C99 - NO FRAMEWORKS - CONVOLUTIONAL</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">SUNSPOT</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">A neural network in C99. No libraries.</p>
+        <p class="thesis-body">A dependency-free neural network written from scratch in C — including convolutional and max-pooling layers — that trains a roughly 99.3% accurate MNIST classifier and beats classical baselines at forecasting the solar cycle.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <a class="btn-dl" href="https://github.com/Bikebrainz/NeuralNetwork/releases/latest/download/neuralnet-windows-x86_64.tar.gz">DOWNLOAD FOR WINDOWS<span aria-hidden="true">↓</span></a>
+          <p class="os-note" id="os-note"></p>
+          <div class="dl-row">
+            <a href="https://github.com/Bikebrainz/NeuralNetwork/releases/latest/download/neuralnet-macos-x86_64.tar.gz">MACOS ↓</a>
+            <a href="https://github.com/Bikebrainz/NeuralNetwork/releases/latest/download/neuralnet-linux-x86_64.tar.gz">LINUX ↓</a>
+            <a href="https://bikebrainz.github.io/NeuralNetwork/">DOCS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>VERSION</dt><dd>1.7.0</dd>
+          <dt>RELEASED</dt><dd>2026-06-10</dd>
+          <dt>SIZE</dt><dd>79 KB · WIN X86-64</dd>
+          <dt>LICENSE</dt><dd>MIT</dd>
+          <dt>SHA256</dt><dd><button type="button" class="sha-btn" id="sha-copy" title="Click to copy the full hash" data-sha="76e907de9b586b76526c9a75fe4425aab5cee7fb76bc117b3326c1d427d04542"></button></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b01-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="b01-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-sun">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="14" y="14" width="28" height="28" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <rect class="g-anim g-origin" x="24" y="24" width="8" height="8" fill="var(--amber)"></rect>
+            <line x1="28" y1="4" x2="28" y2="14" stroke="var(--ink)" stroke-width="2"></line>
+            <line x1="28" y1="42" x2="28" y2="52" stroke="var(--ink)" stroke-width="2"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>NO DEPENDENCIES AT ALL</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>C99 and the standard math library. No BLAS, no framework, no Python. The whole engine is readable in an afternoon.</p>
+      </article>
+
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M28 6 L50 17 L28 28 L6 17 Z" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path class="g-anim" d="M28 28 L50 39 L28 50 L6 39 Z" fill="var(--amber)"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>A REAL NETWORK, NOT A TOY</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Dense, convolutional and max-pooling layers; sigmoid, tanh, ReLU and softmax; MSE and cross-entropy; SGD with momentum and Adam; Xavier and He initialisation; L2 decay.</p>
+      </article>
+
+      <article class="card card-six">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="8" y="8" width="40" height="40" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <path class="g-anim" d="M16 29 L25 38 L41 19" fill="none" stroke="var(--amber)" stroke-width="3"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>THE MATH IS CHECKED</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Convolutional backpropagation is verified against finite-difference gradients, and the whole thing is tested, benchmarked and built in CI on Linux, macOS and Windows.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b02-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="b02-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It is CPU-only and single-machine. There is no GPU path, so it trains at the speed C and your cores allow.</p>
+      <p>It is not a framework and will not replace one. It is the thing underneath a framework, written out in full so you can read it.</p>
+      <p>The solar-cycle forecast is a statistical model beating classical baselines, not a physical simulation of the Sun.</p>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b03-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">03</span>
+      <h2 id="b03-h">VERIFY THE BITS</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">SHA-256</span>
+    </div>
+<pre class="verify"><span class="c"># PowerShell — check the archive against the published hash</span>
+Get-FileHash .\neuralnet-windows-x86_64.tar.gz -Algorithm SHA256
+<span class="c"># expected:</span>
+<span class="h">76e907de9b586b76526c9a75fe4425aab5cee7fb76bc117b3326c1d427d04542</span></pre>
+    <p class="note">SHA256SUMS.txt covering all three platform archives ships with every release.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 53 55 4E 53 50 4F 54</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">SUNSPOT&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 09</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="https://github.com/Bikebrainz/NeuralNetwork">github.com/Bikebrainz/NeuralNetwork</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='SUNSPOT';</script>
+<script src="../child.js"></script>
+</body>
+</html>

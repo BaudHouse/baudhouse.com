@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SIXSIGHT - round-by-round Rainbow Six Siege replay analytics</title>
+<meta name="description" content="Replay telemetry in, verdicts out. A desktop agent watches your replay folder; the web app turns every round into per-player analytics.">
+<link rel="canonical" href="https://baudhouse.com/sixsight/">
+<meta property="og:title" content="SIXSIGHT - round-by-round Rainbow Six Siege replay analytics">
+<meta property="og:description" content="Replay telemetry in, verdicts out. A desktop agent watches your replay folder; the web app turns every round into per-player analytics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baudhouse.com/sixsight/">
+<meta property="og:image" content="https://baudhouse.com/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0A0A0A" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#F2EFE7" media="(prefers-color-scheme: light)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ccircle cx='32' cy='32' r='22' fill='none' stroke='%23E8E8E8' stroke-width='3'/%3E%3Ccircle cx='32' cy='32' r='5' fill='%23FFB000'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem('bh-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';document.documentElement.dataset.theme=t;}catch(e){document.documentElement.dataset.theme='dark';}</script>
+<link rel="preload" href="../fonts/space-grotesk-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../fonts/ibm-plex-mono-500-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<div class="page">
+<div class="warmth" aria-hidden="true"></div>
+<div class="margins" aria-hidden="true"></div>
+
+<header class="topbar">
+  <div class="shell topbar-in">
+    <p class="carrier-line">CARRIER 9600&nbsp;&nbsp;·&nbsp;&nbsp;<span id="lock-text">LOCK ACQUIRED</span><span class="est">&nbsp;&nbsp;·&nbsp;&nbsp;<a class="backlink" href="/">← BAUDHOUSE</a></span></p>
+    <button id="theme-toggle" type="button" aria-label="Toggle color scheme"><span id="mode-swatch" aria-hidden="true"></span><span id="mode-label">DARK</span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" aria-label="SIXSIGHT">
+  <div class="shell hero-in">
+    <div class="hero-top">
+      <p class="kicker">01&nbsp;&nbsp;·&nbsp;&nbsp;SAAS</p>
+      <p class="fig on est" aria-hidden="true">FIG. 01 — REPLAY TELEMETRY - PER ROUND, PER PLAYER</p>
+    </div>
+    <h1 style="font-size:clamp(40px,7.2vw,92px);margin-bottom:clamp(24px,4vw,44px)">SIXSIGHT</h1>
+    <div class="hero-foot">
+      <div class="thesis">
+        <p class="thesis-line">Your replays already know why you lost.</p>
+        <p class="thesis-body">A desktop agent watches your Siege replay folder and uploads nothing you did not record. The web app parses every round into per-player analytics, leaderboards and head-to-head comparisons.</p>
+      </div>
+      <div class="hero-actions">
+        <div class="dl-col">
+          <div class="lab">
+            <strong>IN THE LAB</strong>
+            Not open yet. Self-host and cloud are both planned; the source is private for now.
+          </div>
+          <div class="dl-row">
+            <a href="mailto:signal@baudhouse.com?subject=SIXSIGHT%20early%20access">ASK ABOUT EARLY ACCESS ↗</a>
+          </div>
+        </div>
+        <dl class="meta">
+          <dt>STATUS</dt><dd>PRE-RELEASE</dd>
+          <dt>SURFACE</dt><dd>WEB + AGENT</dd>
+          <dt>BUILT IN</dt><dd>TYPESCRIPT + GO</dd>
+          <dt>DATA</dt><dd>YOUR OWN REPLAYS</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b01-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">01</span>
+      <h2 id="b01-h">WHAT IT DOES</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+    </div>
+    <div class="grid">
+      <article class="card card-six">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="8" y="14" width="40" height="26" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <circle class="g-anim g-origin" cx="28" cy="27" r="6" fill="var(--amber)"></circle>
+          </svg>
+          <span class="card-no" aria-hidden="true">01</span>
+        </div>
+        <h3>THE AGENT WATCHES</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>A small desktop agent notices new replays in your Siege folder and hands them off. You play; the analysis is waiting when you are done.</p>
+      </article>
+
+      <article class="card card-null">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <path d="M28 6 L50 17 L28 28 L6 17 Z" fill="none" stroke="var(--ink)" stroke-width="2"></path>
+            <path class="g-anim" d="M28 28 L50 39 L28 50 L6 39 Z" fill="var(--amber)"></path>
+          </svg>
+          <span class="card-no" aria-hidden="true">02</span>
+        </div>
+        <h3>DEEP EXTRACTION</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Beyond kills and deaths: damage events, drone clears, gadget volume and location events pulled out of the replay stream round by round.</p>
+      </article>
+
+      <article class="card card-em">
+        <div class="card-top">
+          <svg viewBox="0 0 56 56" width="48" height="48" aria-hidden="true">
+            <rect x="6" y="10" width="44" height="36" fill="none" stroke="var(--ink)" stroke-width="2"></rect>
+            <line class="g-anim" x1="6" y1="22" x2="50" y2="22" stroke="var(--amber)" stroke-width="3"></line>
+          </svg>
+          <span class="card-no" aria-hidden="true">03</span>
+        </div>
+        <h3>LEADERBOARDS AND DRILLDOWNS</h3>
+        <span class="ext" aria-hidden="true"></span>
+        <p>Rank by K/D, headshot rate per shot, drone clears or gadget volume. Compare two profiles head to head, or drill into a single map or operator.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="band" aria-labelledby="b02-h">
+  <div class="shell">
+    <div class="band-head">
+      <span class="band-no" aria-hidden="true">02</span>
+      <h2 id="b02-h">WHAT IT DOESN'T DO</h2>
+      <span class="band-rule" aria-hidden="true"></span>
+      <span class="band-count">THE HONEST PART</span>
+    </div>
+    <div class="doesnt">
+      <p>It cannot analyse matches you have no replay for. Siege writes them locally, so the record has to exist on your machine first.</p>
+      <p>It is not a coach and does not tell you what to do next. It tells you what happened, precisely, and leaves the reading to you.</p>
+      <p>It is not live. Analysis happens after the match, from the recorded replay, not during the round.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="shell wave-wrap">
+    <svg id="wave" viewBox="0 0 1080 36" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+      <path d="M0 18 H1080" fill="none" stroke="var(--amber)" stroke-width="1.5" vector-effect="non-scaling-stroke"></path>
+    </svg>
+    <div class="wave-caption">
+      <span>TX 53 49 58 53 49 47 48 54</span>
+      <span>BFSK&nbsp;·&nbsp;9600 BD</span>
+    </div>
+  </div>
+  <div class="shell foot-in">
+    <span class="foot-brand">SIXSIGHT&nbsp;&nbsp;·&nbsp;&nbsp;CARRIER 01</span>
+    <span class="foot-links">
+      <a href="/">← THE ROSTER</a>
+      <a href="mailto:signal@baudhouse.com">signal@baudhouse.com</a>
+    </span>
+    <span class="foot-meta">CARRIER 9600&nbsp;·&nbsp;EST. 2026&nbsp;·&nbsp;<span id="utc"></span></span>
+  </div>
+</footer>
+
+</div>
+<script>window.BH_WORD='SIXSIGHT';</script>
+<script src="../child.js"></script>
+</body>
+</html>
